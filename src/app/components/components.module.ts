@@ -6,6 +6,7 @@ import { ListProductsComponent } from './list-products/list-products.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AddProductDialogComponent } from './add-product-dialog/add-product-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     ListProductsComponent,
     AddProductComponent,
     AddProductDialogComponent,
+    ConfirmDialogComponent,
   ],
   exports: [
     ToolbarComponent,
