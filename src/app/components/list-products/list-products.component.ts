@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductService } from 'src/app/core/services/product.service';
+import Swal from 'sweetalert2';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
@@ -40,8 +41,20 @@ export class ListProductsComponent {
       if (product) {
         this.productService
           .deleteProduct(product)
-          .then(console.log)
-          .catch(console.error);
+          .then((_) => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Nice!!!',
+              text: 'Producto eliminado correctamente',
+            });
+          })
+          .catch((_) => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops!!!',
+              text: 'Ha ocurrido un error intentelo nuevamente',
+            });
+          });
       }
     });
   }
